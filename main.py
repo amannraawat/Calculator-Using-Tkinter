@@ -21,4 +21,7 @@ for x in range(3):
         each_number.grid(row=x+2, column=y, padx=5, pady=5)
         counter += 1
 
+zero_button = Button(root, text='0', height=4, width=6, command=lambda: get_number(0))
+zero_button.grid(row=5, column=1, padx=5, pady=5)
+
 root.mainloop()
