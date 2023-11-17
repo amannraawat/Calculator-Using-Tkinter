@@ -10,6 +10,13 @@ def get_number(num):
     i += 1
 
 
+def get_operations(operator):
+    global i
+    length = len(operator)
+    entry.insert(i, operator)
+    i += length
+
+
 entry = Entry(root)
 entry.grid(row=1, padx=4, pady=5, columnspan=8)
 
@@ -29,7 +36,7 @@ count = 0
 for x in range(4):
     for y in range(3):
         if count < len(operators):
-            op_button = Button(root, text=operators[count], height=4, width=6)
+            op_button = Button(root, text=operators[count], height=4, width=6, command=lambda text=operators[count]: get_operations(text))
             op_button.grid(row=x+2, column=y+3, padx=5, pady=5)
             count += 1
 
