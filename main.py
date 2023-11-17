@@ -17,6 +17,10 @@ def get_operations(operator):
     i += length
 
 
+def all_clear():
+    entry.delete(0, END)
+
+
 entry = Entry(root)
 entry.grid(row=1, padx=4, pady=5, columnspan=8)
 
@@ -40,7 +44,7 @@ for x in range(4):
             op_button.grid(row=x+2, column=y+3, padx=5, pady=5)
             count += 1
 
-allclr_button = Button(root, text='AC', height=4, width=6)
+allclr_button = Button(root, text='AC', height=4, width=6, command=all_clear)
 allclr_button.grid(row=5, column=0, padx=5, pady=5)
 
 root.mainloop()
