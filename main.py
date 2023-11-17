@@ -1,7 +1,7 @@
 from tkinter import *
 
 root = Tk()
-i=0
+i = 0
 
 
 def get_number(num):
@@ -23,5 +23,15 @@ for x in range(3):
 
 zero_button = Button(root, text='0', height=4, width=6, command=lambda: get_number(0))
 zero_button.grid(row=5, column=1, padx=5, pady=5)
+
+operators = ['+', '-', '*', '/', '%', '**', '(', '3.14', ')', '**2']
+count = 0
+for x in range(4):
+    for y in range(3):
+        if count < len(operators):
+            op_button = Button(root, text=operators[count], height=4, width=6)
+            op_button.grid(row=x+2, column=y+3, padx=5, pady=5)
+            count += 1
+
 
 root.mainloop()
