@@ -40,5 +40,7 @@ for x in range(4):
             op_button.grid(row=x+2, column=y+3, padx=5, pady=5)
             count += 1
 
+allclr_button = Button(root, text='AC', height=4, width=6)
+allclr_button.grid(row=5, column=0, padx=5, pady=5)
 
 root.mainloop()
