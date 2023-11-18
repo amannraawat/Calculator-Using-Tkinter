@@ -47,4 +47,7 @@ for x in range(4):
 allclr_button = Button(root, text='AC', height=4, width=6, command=all_clear)
 allclr_button.grid(row=5, column=0, padx=5, pady=5)
 
+equalto_button = Button(root, text='=', height=4, width=6)
+equalto_button.grid(row=5, column=2, padx=5, pady=5)
+
 root.mainloop()
