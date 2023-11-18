@@ -63,4 +63,7 @@ allclr_button.grid(row=5, column=0, padx=5, pady=5)
 equalto_button = Button(root, text='=', height=4, width=6, command=calculate)
 equalto_button.grid(row=5, column=4, padx=5, pady=5)
 
+point_button = Button(root, text='.', height=4, width=6, command=lambda: get_number('.'))
+point_button.grid(row=5, column=2, padx=5, pady=5)
+
 root.mainloop()
