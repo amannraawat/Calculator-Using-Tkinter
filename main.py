@@ -1,4 +1,5 @@
 from tkinter import *
+import ast
 
 root = Tk()
 i = 0
@@ -19,6 +20,18 @@ def get_operations(operator):
 
 def all_clear():
     entry.delete(0, END)
+
+
+def calculate():
+    string = entry.get()
+    try:
+        node = ast.parse(string, mode='eval')
+        result = eval(compile(node, '<string>', 'eval'))
+        all_clear()
+        entry.insert(0, result)
+    except Exception:
+        all_clear()
+        entry.insert(0, 'Error')
 
 
 entry = Entry(root)
@@ -47,7 +60,7 @@ for x in range(4):
 allclr_button = Button(root, text='AC', height=4, width=6, command=all_clear)
 allclr_button.grid(row=5, column=0, padx=5, pady=5)
 
-equalto_button = Button(root, text='=', height=4, width=6)
+equalto_button = Button(root, text='=', height=4, width=6, command=calculate)
 equalto_button.grid(row=5, column=2, padx=5, pady=5)
 
 root.mainloop()
